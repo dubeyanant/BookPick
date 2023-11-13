@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+ML/Books.csv
+ML/Users.csv
+ML/Ratings.csv
+.ipynb_checkpoints
