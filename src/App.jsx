@@ -6,15 +6,16 @@ import Recommendations from "./components/Recommendations";
 
 function App() {
   return (
-    <div className="container mx-auto px-5 my-4">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/recommendations" element={<Recommendations />} />
-      </Routes>
+    <>
+      <div className="container mx-auto px-5 mt-4">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recommendations" element={<Recommendations />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
