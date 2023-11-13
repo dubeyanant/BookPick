@@ -27,3 +27,7 @@ ML/Books.csv
 ML/Users.csv
 ML/Ratings.csv
 .ipynb_checkpoints
+ML/books.json
+ML/popular_df.json
+ML/pt.json
+ML/similarity_scores_list.json
