@@ -2,8 +2,8 @@ import { GithubFilled, TwitterCircleFilled } from "@ant-design/icons";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-200">
-      <div className="flex justify-between container mx-auto px-5 py-2">
+    <div className="bg-gray-200 mt-10">
+      <div className="flex justify-between container mx-auto px-10 py-3">
         <p>Made with ❤️ by Anant Dubey</p>
         <div>
           <a href="https://github.com/dubeyanant/BookPick" className="mr-3">

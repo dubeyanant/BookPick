@@ -1,7 +1,7 @@
 const Recommendations = () => {
   return (
     <>
-      <h1>Recommendations</h1>
+      <h1 className="text-4xl font-semibold mb-8">Book Recommendations</h1>
     </>
   );
 };

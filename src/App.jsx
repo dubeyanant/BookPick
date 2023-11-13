@@ -7,7 +7,7 @@ import Recommendations from "./components/Recommendations";
 function App() {
   return (
     <>
-      <div className="container mx-auto px-5 mt-4">
+      <div className="container mx-auto px-10 mt-4">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

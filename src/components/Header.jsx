@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between mb-10">
       <h1 className="font-medium text-2xl">BookPick</h1>
 
       <ul className="flex font-medium">
