@@ -6,12 +6,15 @@ import similarityScores from "../../Ml/similarity_scores_list.json";
 
 const Recommendations = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [recom, setRecom] = useState([]);
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const recommend = (bookName) => {
+    if (bookName == "") return [];
+
     const index = pt.indexOf(bookName);
 
     const similarItems = similarityScores[index]
@@ -46,6 +49,11 @@ const Recommendations = () => {
     return data;
   };
 
+  const handleClick = (event) => {
+    event.preventDefault();
+    setRecom(recommend(searchTerm));
+  };
+
   return (
     <>
       <h1 className="text-4xl font-semibold mb-8">Book Recommendations</h1>
@@ -59,22 +67,25 @@ const Recommendations = () => {
         />
         <button
           type="submit"
+          onClick={handleClick}
           className="bg-blue-500 px-6 py-2 font-semibold text-white rounded"
         >
           Search
         </button>
       </form>
-      {searchTerm ? (
+      {recom.length > 0 ? (
         <div className="grid grid-cols-4 gap-4">
-          <div className="mb-2">
-            <img
-              src="https://images.pexels.com/photos/18885164/pexels-photo-18885164/free-photo-of-wedding-couple-in-a-park.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Book Title"
-              className="object-cover h-72 rounded"
-            />
-            <p className="font-bold text-xl mt-3">Book Title</p>
-            <p>Book Author</p>
-          </div>
+          {recom.map((item) => (
+            <div className="mb-2">
+              <img
+                src={item[2]}
+                alt={item[0]}
+                className="object-cover h-72 rounded"
+              />
+              <p className="font-bold text-xl mt-3">{item[0]}</p>
+              <p>{item[1]}</p>
+            </div>
+          ))}
         </div>
       ) : (
         <p>There are no books.</p>
