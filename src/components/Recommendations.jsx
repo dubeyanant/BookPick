@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import books from "../../Ml/books.json";
+import books from "../../Ml/books_modified.json";
 import pt from "../../Ml/pt.json";
-import similarity_scores from "../../Ml/similarity_scores_list.json";
+import similarityScores from "../../Ml/similarity_scores_list.json";
 
 const Recommendations = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,9 +11,40 @@ const Recommendations = () => {
     setSearchTerm(event.target.value);
   };
 
-  console.log(books);
-  console.log(pt);
-  console.log(similarity_scores);
+  const recommend = (bookName) => {
+    const index = pt.indexOf(bookName);
+
+    const similarItems = similarityScores[index]
+      .map((score, i) => ({ index: i, score }))
+      .sort((a, b) => b.score - a.score)
+      .slice(1, 5);
+
+    const data = [];
+    for (const item of similarItems) {
+      const tempIndex = item.index;
+      const tempDF = books.filter(
+        (book) => book["Book-Title"] === pt[tempIndex]
+      );
+
+      const tempItem = [];
+
+      for (const book of tempDF) {
+        if (!tempItem.includes(book["Book-Title"])) {
+          tempItem.push(book["Book-Title"]);
+        }
+        if (!tempItem.includes(book["Book-Author"])) {
+          tempItem.push(book["Book-Author"]);
+        }
+        if (!tempItem.includes(book["Image-URL-M"])) {
+          tempItem.push(book["Image-URL-M"]);
+        }
+      }
+
+      data.push(tempItem);
+    }
+
+    return data;
+  };
 
   return (
     <>
