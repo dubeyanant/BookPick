@@ -2,7 +2,7 @@ import { GithubFilled, TwitterCircleFilled } from "@ant-design/icons";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-200 mt-10">
+    <div className="bg-gray-200 mt-auto">
       <div className="flex justify-between container mx-auto px-10 py-3">
         <p>Made with ❤️ by Anant Dubey</p>
         <div>

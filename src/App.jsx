@@ -6,7 +6,7 @@ import Recommendations from "./components/Recommendations";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <div className="container mx-auto px-10 mt-4">
         <Header />
         <Routes>
@@ -15,7 +15,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
