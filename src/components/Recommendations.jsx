@@ -55,7 +55,7 @@ const Recommendations = () => {
   };
 
   return (
-    <>
+    <div className="mx-14 mb-10">
       <h1 className="text-4xl font-semibold mb-8">Book Recommendations</h1>
       <form action="/search" method="get" className="mb-12">
         <input
@@ -88,9 +88,11 @@ const Recommendations = () => {
           ))}
         </div>
       ) : (
-        <p>There are no books.</p>
+        <p className="font-semibold text-xl text-gray-300 pt-8">
+          No books here. Try searching some!
+        </p>
       )}
-    </>
+    </div>
   );
 };
 export default Recommendations;

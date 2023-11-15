@@ -7,7 +7,7 @@ import Recommendations from "./components/Recommendations";
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="container mx-auto px-10 mt-4">
+      <div className="container mx-auto px-10 mt-6">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
