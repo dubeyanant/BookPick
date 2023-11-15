@@ -1,4 +1,4 @@
-import popularBooks from "../../ML/popular_df.json";
+import popularBooks from "../assets/popular_df.json";
 
 const Home = () => {
   return (

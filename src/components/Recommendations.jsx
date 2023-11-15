@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import books from "../../Ml/books_modified.json";
-import pt from "../../Ml/pt.json";
-import similarityScores from "../../Ml/similarity_scores_list.json";
+import books from "../assets/books_modified.json";
+import pt from "../assets/pt.json";
+import similarityScores from "../assets/similarity_scores_list.json";
 
 const Recommendations = () => {
   const [searchTerm, setSearchTerm] = useState("");
