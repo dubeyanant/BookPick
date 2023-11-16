@@ -15,17 +15,25 @@ const NavigationLink = ({ to, children }) => (
   </NavLink>
 );
 
+const headerContent = {
+  title: "BookPick",
+  topBooks: "Top Books",
+  recommendations: "Recommendations",
+};
+
 const Header = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-between mb-10 mx-4 lg:mx-14">
-      <h1 className="font-medium text-2xl">BookPick</h1>
+    <div className="flex flex-col sm:flex-row justify-between mb-10">
+      <h1 className="font-medium text-2xl">{headerContent.title}</h1>
 
       <ul className="flex font-medium flex-col sm:flex-row gap-3 sm:gap-0 mt-4 sm:mt-0">
         <li>
-          <NavigationLink to="/">Top Books</NavigationLink>
+          <NavigationLink to="/">{headerContent.topBooks}</NavigationLink>
         </li>
         <li>
-          <NavigationLink to="/recommendations">Recommendations</NavigationLink>
+          <NavigationLink to="/recommendations">
+            {headerContent.recommendations}
+          </NavigationLink>
         </li>
       </ul>
     </div>
