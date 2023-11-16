@@ -7,8 +7,8 @@ import {
 const Footer = () => {
   return (
     <div className="bg-gray-100 mt-auto">
-      <div className="flex justify-between container mx-auto px-10 py-3">
-        <div className="ml-14 max-w-xs flex flex-col">
+      <div className="flex flex-col lg:flex-row justify-between container mx-auto px-10 py-3">
+        <div className="max-w-xs flex flex-col mb-6 lg:mb-0">
           <h1 className="font-semibold text-2xl">BookPick</h1>
           <p className="italic font-normal mt-1">
             "Discover your next favorite read with our curated list of the top
@@ -17,16 +17,16 @@ const Footer = () => {
             just for you. Happy reading!"
           </p>
         </div>
-        <p className="flex justify-center flex-col">
+        <p className="flex justify-center flex-col lg:ml-10 mb-2 lg:mb-0">
           Made with ❤️ by Anant Dubey
         </p>
-        <div className="mr-14 flex flex-col justify-center">
+        <div className="flex flex-col justify-center lg:mr-10">
           <h1 className="text-xl">Contribute here</h1>
           <a href="https://github.com/dubeyanant/BookPick" className="mr-3">
             <p className="font-light">BookPick repo</p>
           </a>
           <h1 className="text-xl mt-4">Contact me</h1>
-          <div className="flex justify-between">
+          <div className="flex gap-2 lg:justify-between">
             <a href="https://github.com/dubeyanant">
               <GithubFilled style={{ fontSize: "24px" }} />
             </a>

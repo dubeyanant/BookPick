@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import books from "../assets/books_modified.json";
 import pt from "../assets/pt.json";
@@ -13,7 +13,7 @@ const Recommendations = () => {
   };
 
   const recommend = (bookName) => {
-    if (bookName == "") return [];
+    if (bookName === "") return [];
 
     const index = pt.indexOf(bookName);
 
@@ -55,44 +55,49 @@ const Recommendations = () => {
   };
 
   return (
-    <div className="mx-14 mb-10">
-      <h1 className="text-4xl font-semibold mb-8">Book Recommendations</h1>
+    <div className="mx-4 lg:mx-14 mb-10">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-8">
+        Book Recommendations
+      </h1>
       <form action="/search" method="get" className="mb-12">
         <input
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
           placeholder="Enter book title"
-          className="border-solid border-2 rounded py-2 px-5 mr-6 border-gray-200 w-96"
+          className="border-solid border-2 rounded py-2 px-5 mb-2 lg:mr-2 lg:mb-0 border-gray-200 w-full lg:w-96"
         />
         <button
           type="submit"
           onClick={handleClick}
-          className="bg-blue-500 px-6 py-2 font-semibold text-white rounded"
+          className="bg-blue-500 px-6 py-2 font-semibold text-white rounded w-full lg:w-auto"
         >
           Search
         </button>
       </form>
       {recom.length > 0 ? (
-        <div className="grid grid-cols-4 gap-4">
-          {recom.map((item) => (
-            <div className="mb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {recom.map((item, index) => (
+            <div key={index} className="mb-2">
               <img
                 src={item[2]}
                 alt={item[0]}
-                className="object-cover h-72 rounded"
+                className="object-cover h-64 sm:h-72 rounded"
               />
-              <p className="font-bold text-xl mt-3">{item[0]}</p>
-              <p>{item[1]}</p>
+              <p className="font-bold text-lg lg:text-xl xl:text-2xl mt-3">
+                {item[0]}
+              </p>
+              <p className="text-base lg:text-lg xl:text-xl">{item[1]}</p>
             </div>
           ))}
         </div>
       ) : (
-        <p className="font-semibold text-xl text-gray-300 pt-8">
+        <p className="font-semibold text-lg lg:text-xl xl:text-2xl text-gray-300 pt-8">
           No books here. Try searching some!
         </p>
       )}
     </div>
   );
 };
+
 export default Recommendations;
